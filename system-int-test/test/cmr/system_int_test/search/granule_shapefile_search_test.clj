@@ -233,10 +233,10 @@
           "Single Polygon around Virgina with hole around DC"
           "polygon_with_hole" [whole-world very-wide-cart richmond]
 
-          "Single feature, multiple polygons around DC and Richnmond"
+          "Single feature, multiple polygons around DC and Richmond"
           "multi_poly" [whole-world very-wide-cart washington-dc richmond]
 
-          "Multiple feature, single Polygons around DC and Richnmond"
+          "Multiple feature, single Polygons around DC and Richmond"
           "multi_feature" [whole-world very-wide-cart washington-dc richmond]
 
           "Polygon across the antimeridian"

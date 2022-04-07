@@ -19,7 +19,7 @@
         (is (= stac-geometry (ssrh/shapes->stac-geometry shapes)))
         (is (= stac-bbox (ssrh/shapes->stac-bbox shapes))))
 
-      "a signle point to stac geometry and bbox"
+      "a single point to stac geometry and bbox"
       [(p/point 0.00000567994760508036 0.0000000123456)]
       {:type "Point"
        :coordinates [0.00000567994760508036 0.0000000123456]}
