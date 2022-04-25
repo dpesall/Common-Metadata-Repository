@@ -436,6 +436,56 @@
               ; "Broken test"
               ; [] [0 1 6 0] nil
 
+
+; CMR-8054
+(deftest orbit-granule-polygon-search-test
+  (let [coll (d/ingest-concept-with-metadata-file "CMR-8054/C2003771331-NSIDC_ECS.native"
+                                                  {:provider-id "PROV1"
+                                                   :concept-type :collection
+                                                   :native-id "orbit-parent"
+                                                   :format-key :iso19115})
+        _ (index/wait-until-indexed)
+        g1 (d/ingest-concept-with-metadata-file "CMR-8054/G2093833681-NSIDC_ECS-inside"
+                                                {:provider-id "PROV1"
+                                                 :concept-type :granule
+                                                 :native-id "inside"
+                                                 :format-key :iso-smap})
+        g2 (d/ingest-concept-with-metadata-file "CMR-8054/G2118170395-NSIDC_ECS-outside"
+                                                {:provider-id "PROV1"
+                                                 :concept-type :granule
+                                                 :native-id "outside"
+                                                 :format-key :iso-smap})
+        coords [-77.991943359375 -8.836223192538503
+                -77.5689697265625 -9.552000396390493
+                -77.27783203125 -10.244654445228324
+                -77.01416015625 -9.958029972336426
+                -77.0745849609375 -9.28104347246053
+                -77.4591064453125 -8.635334050763111
+                -77.89306640625 -8.466939027264113
+                -77.991943359375 -8.836223192538503]
+
+        coords2 [-128 -58
+                 13 -58
+                 13 26
+                 -128 26
+                 -128 -58]
+        coords3 [1 0
+                 1 -1
+                 0 -1
+                 0 0
+                 1 0]]
+    (index/wait-until-indexed)
+    (println (search/find-refs :granule {:provider "PROV1"
+                                         :polygon (apply st/search-poly coords3)}))))
+
+(comment
+  (d/refs-match? [g1] (select-keys (search/find-refs)
+                                  :granule
+                                  (merge {:polygon
+                                          (apply st/search-poly coords)
+                                          :provider "PROV1"})
+                                 [:refs :hits])))
+
 (deftest ascending-crossing-precision-test
   (let [coll (d/ingest-concept-with-metadata-file "iso-samples/CMR-5269-IsoMendsCollection.xml"
                                                   {:provider-id "PROV1"
