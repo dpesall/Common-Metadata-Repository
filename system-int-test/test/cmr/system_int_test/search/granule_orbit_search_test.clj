@@ -470,13 +470,13 @@
                  -128 26
                  -128 -58]
         coords3 [1 0
-                 1 -1
-                 0 -1
                  0 0
+                 0 -1
+                 1 -1
                  1 0]]
     (index/wait-until-indexed)
-    (println (search/find-refs :granule {:provider "PROV1"
-                                         :polygon (apply st/search-poly coords3)}))))
+    (println "Hits:" (:hits (search/find-refs :granule {:provider "PROV1"
+                                                        :polygon (apply st/search-poly coords)})))))
 
 (comment
   (d/refs-match? [g1] (select-keys (search/find-refs)
