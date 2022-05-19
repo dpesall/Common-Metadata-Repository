@@ -137,7 +137,7 @@
          crossing-ranges)))
 
 (defn- lat-lon-crossings-conditions
-  "Create the seacrh conditions for a latitude-range / equator crosssing longitude-range returned
+  "Create the search conditions for a latitude-range / equator crosssing longitude-range returned
   by echo-orbits"
   [context lat-ranges-crossings ascending?]
   (let [orbits-runtime (get-in context [:system orbits/system-key])]
