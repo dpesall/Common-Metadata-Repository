@@ -515,6 +515,48 @@
     (println "Hits:" (:hits (search/find-refs :granule {:provider "PROV1"
                                                         :polygon (apply st/search-poly coords)})))))
 
+(deftest orbit-granule-polygon-search-across-collections-test
+  (let [coll1 (d/ingest-concept-with-metadata-file "CMR-8054/Collections/ATL03.native"
+                                                   {:provider-id "PROV1"
+                                                    :concept-type :collection
+                                                    :native-id "orbit-parent-atl03"
+                                                    :format-key :iso19115})
+        coll2 (d/ingest-concept-with-metadata-file "CMR-8054/Collections/ATL06.native"
+                                                         {:provider-id "PROV1"
+                                                          :concept-type :collection
+                                                          :native-id "orbit-parent-atl06"
+                                                          :format-key :iso19115})
+        _ (index/wait-until-indexed)
+        g1 (d/ingest-concept-with-metadata-file "CMR-8054/Collections/ATL04-Granule"
+                                                {:provider-id "PROV1"
+                                                 :concept-type :granule
+                                                 :native-id "atl03granule"
+                                                 :format-key :iso-smap})
+        g2 (d/ingest-concept-with-metadata-file "CMR-8054/Collections/ATL06-Granule"
+                                                {:provider-id "PROV1"
+                                                 :concept-type :granule
+                                                 :native-id "atl06granule"
+                                                 :format-key :iso-smap})
+        coords [-72.39406 -11.87601
+                -72.39406 -13.87752
+                -69.48143 -13.87752
+                -69.48143 -11.87601
+                -72.39406 -11.87601]
+
+        coords2 [-128 -58
+                 13 -58
+                 13 26
+                 -128 26
+                 -128 -58]
+        coords3 [1 0
+                 0 0
+                 0 -1
+                 1 -1
+                 1 0]]
+    (index/wait-until-indexed)
+    (println "Hits:" (:hits (search/find-refs :granule {:provider "PROV1"
+                                                        :polygon (apply st/search-poly coords)})))))
+
 (deftest ascending-crossing-precision-test
   (let [coll (d/ingest-concept-with-metadata-file "iso-samples/CMR-5269-IsoMendsCollection.xml"
                                                   {:provider-id "PROV1"
