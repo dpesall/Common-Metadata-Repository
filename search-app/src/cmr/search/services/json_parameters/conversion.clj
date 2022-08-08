@@ -47,7 +47,7 @@
    :project :string
    :archive-center :nested-condition
    :data-center :nested-condition
-   :spatial-keyword :string
+   :spatial-keyword :string 
    :location-keyword :nested-condition
    :two-d-coordinate-system-name :string
    :horizontal-data-resolution-range :range-facet
