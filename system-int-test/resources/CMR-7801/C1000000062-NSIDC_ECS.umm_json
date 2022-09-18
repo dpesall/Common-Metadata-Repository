@@ -1,0 +1,487 @@
+{
+  "DataLanguage" : "eng; usa",
+  "CollectionCitations" : [ {
+    "Title" : "IceBridge ATM L1B Elevation and Return Strength V002",
+    "Publisher" : "NASA National Snow and Ice Data Center Distributed Active Archive Center",
+    "Version" : "2"
+  } ],
+  "AdditionalAttributes" : [ {
+    "Name" : "AircraftID",
+    "Description" : "The identifier of the airplane used by the FAA to uniquely identify each aircraft",
+    "DataType" : "STRING"
+  }, {
+    "Name" : "SIPSMetGenVersion",
+    "Description" : "The version of the SIPSMetGen software used to produce the metadata file for this granule",
+    "DataType" : "STRING"
+  }, {
+    "Name" : "ThemeID",
+    "Description" : "The identifier of the theme under which data are logically grouped",
+    "DataType" : "STRING"
+  }, {
+    "Name" : "identifier_product_doi",
+    "Description" : "Digital object identifier that uniquely identifies this data product",
+    "DataType" : "STRING"
+  }, {
+    "Name" : "identifier_product_doi_authority",
+    "Description" : "URL of the digital object identifier resolving authority",
+    "DataType" : "STRING"
+  } ],
+  "SpatialExtent" : {
+    "SpatialCoverageType" : "HORIZONTAL",
+    "HorizontalSpatialDomain" : {
+      "Geometry" : {
+        "CoordinateSystem" : "CARTESIAN",
+        "BoundingRectangles" : [ {
+          "WestBoundingCoordinate" : -180.0,
+          "NorthBoundingCoordinate" : 90.0,
+          "EastBoundingCoordinate" : 180.0,
+          "SouthBoundingCoordinate" : 60.0
+        }, {
+          "WestBoundingCoordinate" : -180.0,
+          "NorthBoundingCoordinate" : -53.0,
+          "EastBoundingCoordinate" : 180.0,
+          "SouthBoundingCoordinate" : -90.0
+        } ]
+      }
+    },
+    "GranuleSpatialRepresentation" : "GEODETIC"
+  },
+  "CollectionProgress" : "PLANNED",
+  "ScienceKeywords" : [ {
+    "Category" : "EARTH SCIENCE",
+    "Topic" : "CLIMATE INDICATORS",
+    "Term" : "CRYOSPHERIC INDICATORS",
+    "VariableLevel1" : "GLACIAL MEASUREMENTS",
+    "VariableLevel2" : "GLACIER ELEVATION/ICE SHEET ELEVATION"
+  } ],
+  "TemporalExtents" : [ {
+    "EndsAtPresentFlag" : false,
+    "RangeDateTimes" : [ {
+      "BeginningDateTime" : "2013-03-20T00:00:00.000Z",
+      "EndingDateTime" : "2019-11-20T23:59:59.999Z"
+    } ]
+  } ],
+  "ProcessingLevel" : {
+    "ProcessingLevelDescription" : "Sensor units",
+    "Id" : "Level 1B"
+  },
+  "DOI" : {
+    "DOI" : "10.5067/19SIM5TXKPGT"
+  },
+  "ShortName" : "ILATM1B",
+  "EntryTitle" : "IceBridge ATM L1B Elevation and Return Strength V002",
+  "RelatedUrls" : [ {
+    "Description" : "Tool to visualize, search, and download IceBridge data.",
+    "URLContentType" : "DistributionURL",
+    "Type" : "GET DATA",
+    "Subtype" : "IceBridge Portal",
+    "URL" : "http://nsidc.org/icebridge/portal/",
+    "GetData" : {
+      "Format" : "Not provided",
+      "Size" : 0.0,
+      "Unit" : "KB"
+    }
+  }, {
+    "Description" : "Direct download via HTTPS protocol.",
+    "URLContentType" : "DistributionURL",
+    "Type" : "GET DATA",
+    "Subtype" : "DIRECT DOWNLOAD",
+    "URL" : "https://n5eil01u.ecs.nsidc.org/ICEBRIDGE/ILATM1B.002/",
+    "GetData" : {
+      "Format" : "Not provided",
+      "Size" : 0.0,
+      "Unit" : "KB"
+    }
+  }, {
+    "Description" : "NASA's newest search and order tool for subsetting, reprojecting, and reformatting data.",
+    "URLContentType" : "DistributionURL",
+    "Type" : "GET DATA",
+    "Subtype" : "Earthdata Search",
+    "URL" : "https://search.earthdata.nasa.gov/search/granules?p=C1000000062-NSIDC_ECS&m=-31.078125!17.71875!1!1!0!0%2C2&tl=1514139927!4!!&q=ILATM1B",
+    "GetData" : {
+      "Format" : "Not provided",
+      "Size" : 0.0,
+      "Unit" : "KB"
+    }
+  }, {
+    "Description" : "Data Access link for ITSD project",
+    "URLContentType" : "DistributionURL",
+    "Type" : "GET DATA",
+    "URL" : "https://nsidc.org/data/data-access-tool/ILATM1B/versions/2/",
+    "GetData" : {
+      "Format" : "Not provided",
+      "Size" : 0.0,
+      "Unit" : "KB"
+    }
+  }, {
+    "Description" : "Provides access to data, documentation, tools, citation information, support, and other resources.",
+    "URLContentType" : "CollectionURL",
+    "Type" : "DATA SET LANDING PAGE",
+    "URL" : "https://doi.org/10.5067/19SIM5TXKPGT"
+  }, {
+    "Description" : "Includes a user's guide, supplemental documents like ATBDs and academic papers, How Tos, FAQs, etc.",
+    "URLContentType" : "PublicationURL",
+    "Type" : "VIEW RELATED INFORMATION",
+    "Subtype" : "GENERAL DOCUMENTATION",
+    "URL" : "https://doi.org/10.5067/19SIM5TXKPGT"
+  } ],
+  "ContactGroups" : [ {
+    "Roles" : [ "User Services" ],
+    "ContactInformation" : {
+      "Addresses" : [ {
+        "City" : "Boulder",
+        "StateProvince" : "Colorado",
+        "Country" : "USA"
+      } ]
+    },
+    "GroupName" : "NASA National Snow and Ice Data Center Distributed Active Archive Center"
+  } ],
+  "Abstract" : "This data set contains spot elevation measurements of Arctic and Antarctic sea ice, and Greenland, Antarctic Peninsula, and West Antarctic region ice surface acquired using the NASA Airborne Topographic Mapper (ATM) instrumentation. The data were collected as part of Operation IceBridge funded aircraft survey campaigns.",
+  "Purpose" : "Scientific Research",
+  "LocationKeywords" : [ {
+    "Category" : "CONTINENT",
+    "Type" : "NORTH AMERICA",
+    "Subregion1" : "GREENLAND"
+  }, {
+    "Category" : "CONTINENT",
+    "Type" : "ANTARCTICA"
+  }, {
+    "Category" : "GEOGRAPHIC REGION",
+    "Type" : "ARCTIC"
+  } ],
+  "MetadataDates" : [ {
+    "Date" : "2013-11-26T00:00:00.000Z",
+    "Type" : "CREATE"
+  }, {
+    "Date" : "2020-12-10T00:00:00.000Z",
+    "Type" : "UPDATE"
+  } ],
+  "Version" : "2",
+  "Projects" : [ {
+    "ShortName" : "2013_AN_NASA",
+    "LongName" : "Operation IceBridge West Antarctica/Antarctic Sea Ice 2013",
+    "StartDate" : "2013-11-18T00:00:00.000Z",
+    "EndDate" : "2013-11-28T00:00:00.000Z"
+  }, {
+    "ShortName" : "2013_GR_NASA",
+    "LongName" : "Operation IceBridge Greenland/Arctic Sea Ice 2013",
+    "StartDate" : "2013-03-20T00:00:00.000Z",
+    "EndDate" : "2013-11-14T00:00:00.000Z"
+  }, {
+    "ShortName" : "2014_AN_NASA",
+    "LongName" : "Operation IceBridge West Antarctica/Antarctic Sea Ice 2014",
+    "StartDate" : "2014-10-16T00:00:00.000Z",
+    "EndDate" : "2014-11-22T00:00:00.000Z"
+  }, {
+    "ShortName" : "2014_GR_NASA",
+    "LongName" : "Operation IceBridge Greenland/Arctic Sea Ice 2014",
+    "StartDate" : "2014-03-12T00:00:00.000Z",
+    "EndDate" : "2014-10-02T00:00:00.000Z"
+  }, {
+    "ShortName" : "2015_AN_NASA",
+    "LongName" : "Operation IceBridge West Antarctica/Antarctic Sea Ice 2015",
+    "StartDate" : "2015-09-17T00:00:00.000Z",
+    "EndDate" : "2015-09-24T00:00:00.000Z"
+  }, {
+    "ShortName" : "2015_GR_NASA",
+    "LongName" : "Operation IceBridge Greenland/Arctic Sea Ice 2015",
+    "StartDate" : "2015-03-19T00:00:00.000Z",
+    "EndDate" : "2015-10-22T00:00:00.000Z"
+  }, {
+    "ShortName" : "2016_AK_NASA",
+    "LongName" : "Operation IceBridge Alaska Glaciers 2016",
+    "StartDate" : "2016-01-01T00:00:00.000Z",
+    "EndDate" : "2016-12-31T00:00:00.000Z"
+  }, {
+    "ShortName" : "2016_AN_NASA",
+    "LongName" : "Operation IceBridge West Antarctica/Antarctic Sea Ice 2016",
+    "StartDate" : "2016-10-14T00:00:00.000Z",
+    "EndDate" : "2016-11-19T00:00:00.000Z"
+  }, {
+    "ShortName" : "2016_GR_NASA",
+    "LongName" : "Operation IceBridge Greenland/Arctic Sea Ice 2016",
+    "StartDate" : "2016-04-19T00:00:00.000Z",
+    "EndDate" : "2016-07-21T00:00:00.000Z"
+  }, {
+    "ShortName" : "2017_AN_NASA",
+    "LongName" : "Operation IceBridge West Antarctica/Antarctic Sea Ice 2017",
+    "StartDate" : "2017-01-01T00:00:00.000Z",
+    "EndDate" : "2017-12-31T00:00:00.000Z"
+  }, {
+    "ShortName" : "2017_GR_NASA",
+    "LongName" : "Operation IceBridge Greenland/Arctic Sea Ice 2017",
+    "StartDate" : "2017-01-01T00:00:00.000Z",
+    "EndDate" : "2017-12-31T00:00:00.000Z"
+  }, {
+    "ShortName" : "2018_AN_NASA",
+    "LongName" : "Operation IceBridge West Antarctica/Antarctic Sea Ice 2018",
+    "StartDate" : "2018-01-01T00:00:00.000Z",
+    "EndDate" : "2018-12-31T00:00:00.000Z"
+  }, {
+    "ShortName" : "2018_GR_NASA",
+    "LongName" : "Operation IceBridge Greenland/Arctic Sea Ice 2018",
+    "StartDate" : "2018-01-01T00:00:00.000Z",
+    "EndDate" : "2018-12-31T00:00:00.000Z"
+  }, {
+    "ShortName" : "2019_AN_NASA",
+    "LongName" : "Operation IceBridge West Antarctica/Antarctic Sea Ice 2019",
+    "StartDate" : "2019-01-01T00:00:00.000Z",
+    "EndDate" : "2019-12-31T00:00:00.000Z"
+  }, {
+    "ShortName" : "2019_GR_NASA",
+    "LongName" : "Operation IceBridge Greenland/Arctic Sea Ice 2019",
+    "StartDate" : "2019-01-01T00:00:00.000Z",
+    "EndDate" : "2019-12-31T00:00:00.000Z"
+  } ],
+  "UseConstraints" : {
+    "LicenseText" : " These data are freely, openly, and fully available to use without restrictions, provided that you cite the data according to the recommended citation at https://nsidc.org/about/use_copyright.html. For more information on the NASA EOSDIS Data Use Policy, see https://earthdata.nasa.gov/earth-observation-data/data-use-policy."
+  },
+  "ContactPersons" : [ {
+    "Roles" : [ "Technical Contact" ],
+    "ContactInformation" : {
+      "ContactMechanisms" : [ {
+        "Type" : "Telephone",
+        "Value" : "1 303 492 6199"
+      }, {
+        "Type" : "Fax",
+        "Value" : "1 303 492 2468"
+      }, {
+        "Type" : "Email",
+        "Value" : "nsidc@nsidc.org"
+      } ],
+      "Addresses" : [ {
+        "StreetAddresses" : [ "CIRES, 449 UCB", "University of Colorado" ],
+        "City" : "Boulder",
+        "StateProvince" : "CO",
+        "Country" : "USA",
+        "PostalCode" : "80309-0449"
+      } ]
+    },
+    "FirstName" : "NSIDC",
+    "MiddleName" : "User",
+    "LastName" : "Services"
+  }, {
+    "Roles" : [ "Technical Contact" ],
+    "ContactInformation" : {
+      "ContactMechanisms" : [ {
+        "Type" : "Email",
+        "Value" : "michael.studinger@nasa.gov"
+      } ],
+      "Addresses" : [ {
+        "City" : "Greenbelt",
+        "StateProvince" : "MD",
+        "Country" : "USA",
+        "PostalCode" : "USA"
+      } ]
+    },
+    "FirstName" : "Michael",
+    "LastName" : "Studinger"
+  }, {
+    "Roles" : [ "Technical Contact" ],
+    "ContactInformation" : {
+      "ContactMechanisms" : [ {
+        "Type" : "Email",
+        "Value" : "michael.studinger@nasa.gov"
+      } ],
+      "Addresses" : [ {
+        "City" : "Greenbelt",
+        "StateProvince" : "MD",
+        "Country" : "USA",
+        "PostalCode" : "USA"
+      } ]
+    },
+    "FirstName" : "Michael",
+    "LastName" : "Studinger"
+  } ],
+  "DataCenters" : [ {
+    "Roles" : [ "ARCHIVER" ],
+    "ShortName" : "NASA NSIDC DAAC",
+    "ContactInformation" : {
+      "RelatedUrls" : [ {
+        "Description" : "Archiving Data Center",
+        "URLContentType" : "DataCenterURL",
+        "Type" : "HOME PAGE",
+        "URL" : "https://nsidc.org/daac"
+      } ],
+      "ContactMechanisms" : [ {
+        "Type" : "Telephone",
+        "Value" : "1 303 492 6199"
+      }, {
+        "Type" : "Email",
+        "Value" : "nsidc@nsidc.org"
+      } ],
+      "Addresses" : [ {
+        "StreetAddresses" : [ "National Snow and Ice Data Center", "CIRES, 449 UCB", "University of Colorado" ],
+        "City" : "Boulder",
+        "StateProvince" : "CO",
+        "Country" : "USA",
+        "PostalCode" : "80309-0449"
+      } ]
+    }
+  }, {
+    "Roles" : [ "DISTRIBUTOR" ],
+    "ShortName" : "NASA NSIDC DAAC",
+    "ContactInformation" : {
+      "RelatedUrls" : [ {
+        "Description" : "Archiving Data Center",
+        "URLContentType" : "DataCenterURL",
+        "Type" : "HOME PAGE",
+        "URL" : "https://nsidc.org/daac"
+      } ],
+      "ContactMechanisms" : [ {
+        "Type" : "Telephone",
+        "Value" : "1 303 492 6199"
+      }, {
+        "Type" : "Email",
+        "Value" : "nsidc@nsidc.org"
+      } ],
+      "Addresses" : [ {
+        "StreetAddresses" : [ "National Snow and Ice Data Center", "CIRES, 449 UCB", "University of Colorado" ],
+        "City" : "Boulder",
+        "StateProvince" : "CO",
+        "Country" : "USA",
+        "PostalCode" : "80309-0449"
+      } ]
+    }
+  }, {
+    "Roles" : [ "PROCESSOR" ],
+    "ShortName" : "NASA/GSFC/WFF/OSB"
+  }, {
+    "Roles" : [ "ORIGINATOR" ],
+    "ShortName" : "NASA/GSFC/WFF/OSB"
+  } ],
+  "Platforms" : [ {
+    "Type" : "Aircraft",
+    "ShortName" : "C-130",
+    "LongName" : "Lockheed C-130 Hercules",
+    "Instruments" : [ {
+      "ShortName" : "ATM",
+      "LongName" : "Airborne Topographic Mapper",
+      "Technique" : "instrument",
+      "NumberOfInstruments" : 1,
+      "ComposedOf" : [ {
+        "ShortName" : "ATM",
+        "LongName" : "Airborne Topographic Mapper"
+      } ]
+    } ]
+  }, {
+    "Type" : "Aircraft",
+    "ShortName" : "DC-8",
+    "LongName" : "Douglas DC-8",
+    "Characteristics" : [ {
+      "Name" : "AircraftID",
+      "Description" : "The identifier of the airplane used by the FAA to uniquely identify each aircraft",
+      "Value" : "N817NA",
+      "Unit" : "Not Applicable",
+      "DataType" : "STRING"
+    } ],
+    "Instruments" : [ {
+      "ShortName" : "ATM",
+      "LongName" : "Airborne Topographic Mapper",
+      "Technique" : "instrument",
+      "NumberOfInstruments" : 1,
+      "ComposedOf" : [ {
+        "ShortName" : "ATM",
+        "LongName" : "Airborne Topographic Mapper"
+      } ]
+    } ]
+  }, {
+    "Type" : "Aircraft",
+    "ShortName" : "G-V",
+    "LongName" : "Gulfstream V",
+    "Characteristics" : [ {
+      "Name" : "AircraftID",
+      "Description" : "The identifier of the airplane used by the FAA to uniquely identify each aircraft",
+      "Value" : "N95NA",
+      "Unit" : "Not Applicable",
+      "DataType" : "STRING"
+    } ],
+    "Instruments" : [ {
+      "ShortName" : "ATM",
+      "LongName" : "Airborne Topographic Mapper",
+      "Technique" : "instrument",
+      "NumberOfInstruments" : 1,
+      "ComposedOf" : [ {
+        "ShortName" : "ATM",
+        "LongName" : "Airborne Topographic Mapper"
+      } ]
+    } ]
+  }, {
+    "Type" : "Aircraft",
+    "ShortName" : "HU-25A",
+    "LongName" : "Dassault HU-25A Guardian",
+    "Characteristics" : [ {
+      "Name" : "AircraftID",
+      "Description" : "The identifier of the airplane used by the FAA to uniquely identify each aircraft",
+      "Value" : "N524NA (d77685bd-aa94-4717-bd97-632699d999b5)",
+      "Unit" : "Not Applicable",
+      "DataType" : "STRING"
+    } ],
+    "Instruments" : [ {
+      "ShortName" : "ATM",
+      "LongName" : "Airborne Topographic Mapper",
+      "Technique" : "instrument",
+      "NumberOfInstruments" : 1,
+      "ComposedOf" : [ {
+        "ShortName" : "ATM",
+        "LongName" : "Airborne Topographic Mapper"
+      } ]
+    } ]
+  }, {
+    "Type" : "Aircraft",
+    "ShortName" : "HU-25C",
+    "LongName" : "Dassault HU-25C Guardian",
+    "Instruments" : [ {
+      "ShortName" : "ATM",
+      "LongName" : "Airborne Topographic Mapper",
+      "Technique" : "instrument",
+      "NumberOfInstruments" : 1,
+      "ComposedOf" : [ {
+        "ShortName" : "ATM",
+        "LongName" : "Airborne Topographic Mapper"
+      } ]
+    } ]
+  }, {
+    "Type" : "Aircraft",
+    "ShortName" : "P-3B",
+    "LongName" : "Lockheed P-3B Orion",
+    "Characteristics" : [ {
+      "Name" : "AircraftID",
+      "Description" : "The identifier of the airplane used by the FAA to uniquely identify each aircraft",
+      "Value" : "N426NA",
+      "Unit" : "Not Applicable",
+      "DataType" : "STRING"
+    } ],
+    "Instruments" : [ {
+      "ShortName" : "ATM",
+      "LongName" : "Airborne Topographic Mapper",
+      "Technique" : "instrument",
+      "NumberOfInstruments" : 1,
+      "ComposedOf" : [ {
+        "ShortName" : "ATM",
+        "LongName" : "Airborne Topographic Mapper"
+      } ]
+    } ]
+  }, {
+    "Type" : "Aircraft",
+    "ShortName" : "WP-3D ORION",
+    "LongName" : "Lockheed WP-3D Orion",
+    "Instruments" : [ {
+      "ShortName" : "ATM",
+      "LongName" : "Airborne Topographic Mapper",
+      "Technique" : "instrument",
+      "NumberOfInstruments" : 1,
+      "ComposedOf" : [ {
+        "ShortName" : "ATM",
+        "LongName" : "Airborne Topographic Mapper"
+      } ]
+    } ]
+  } ],
+  "ArchiveAndDistributionInformation" : {
+    "FileDistributionInformation" : [ {
+      "FormatType" : "Native",
+      "Format" : "HDF5",
+      "FormatDescription" : "HTTPS"
+    } ]
+  }
+}

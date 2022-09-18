@@ -282,6 +282,33 @@
             science-keywords (-> (:children response) first :children)]
         (verify-nested-facets-ordered-alphabetically science-keywords)))))
 
+(deftest project-campaign-facet-return-test
+  (let [coll (d/ingest-concept-with-metadata-file "CMR-7801/C1000000062-NSIDC_ECS.echo10"
+                                                  {:provider-id "PROV1"
+                                                   :concept-type :collection
+                                                   :native-id "parent"
+                                                   :format-key :echo10})
+        expected-facets [{:field "data_center" :value-counts [["NASA NSIDC DAAC" 1] ["NASA/GSFC/WFF/OSB" 1]]}
+                           {:field "archive_center" :value-counts [["NASA NSIDC DAAC" 1]]}
+                           {:field "project" :value-counts [["2013_AN_NASA" 1] ["2013_GR_NASA" 1] ["2014_AN_NASA" 1] ["2014_GR_NASA" 1] ["2015_AN_NASA" 1] ["2015_GR_NASA" 1] ["2016_AK_NASA" 1] ["2016_AN_NASA" 1] ["2016_GR_NASA" 1] ["2017_AN_NASA" 1] ["2017_GR_NASA" 1] ["2018_AN_NASA" 1] ["2018_GR_NASA" 1] ["2019_AN_NASA" 1] ["2019_GR_NASA" 1]]}
+                           {:field "platform" :value-counts [["C-130" 1] ["DC-8" 1] ["G-V" 1] ["HU-25A" 1] ["HU-25C" 1] ["P-3B" 1] ["WP-3D ORION" 1]]}
+                           {:field "instrument" :value-counts [["ATM" 1]]}
+                           {:field "sensor" :value-counts [["ATM" 1]]}
+                           {:field "two_d_coordinate_system_name" :value-counts []}
+                           {:field "processing_level_id" :value-counts [["Level 1B" 1]]}
+                           {:field "category" :value-counts [["EARTH SCIENCE" 1]]}
+                           {:field "topic" :value-counts [["CLIMATE INDICATORS" 1]]}
+                           {:field "term" :value-counts [["CRYOSPHERIC INDICATORS" 1]]}
+                           {:field "variable_level_1" :value-counts [["GLACIAL MEASUREMENTS" 1]]}
+                           {:field "variable_level_2" :value-counts [["GLACIER ELEVATION/ICE SHEET ELEVATION" 1]]}
+                           {:field "variable_level_3" :value-counts []}
+                           {:field "detailed_variable" :value-counts []}]
+        _ (index/wait-until-indexed)]
+    (testing "Search facets"
+      (is (= expected-facets (:facets (search/find-refs :collection {:include-facets true
+                                                                     :project "2014_AN_NASA"})))))))
+
+
 (deftest remove-facets-without-collections
   (fu/make-coll 1
                 "PROV1"
