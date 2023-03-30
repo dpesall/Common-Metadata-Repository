@@ -1224,18 +1224,15 @@
 
 ;; CMR-8038
 (deftest search-with-empty-json
-  (let [coll1 (d/ingest "PROV1" (dc/collection {:entry-title "Dataset1"
-                                                 :beginning-date-time "2000-01-01T12:00:00Z"
-                                                 :spatial-coverage (dc/spatial {:gsr :geodetic})}))
-        coll-concept-id (:concept-id coll1)
-        (index/wait-until-indexed)]
-
-      (testing "testing collection search with empty json body"
-        (let [response (client/post)
-                   (url/search-url :collection)
-                   {:accept "application/json; profile=stac-catalogue"
-                    :content-type "application/json"
-                    :body (json/generate-string {})
-                    :throw-exceptions false
-                    :connection-manager (s/conn-mgr)}]
-            (is (= 422 (:status response)))))))
+  (let [coll1 (d/ingest "PROV1" (dc/collection))
+        coll-concept-id (:concept-id coll1)]
+    (index/wait-until-indexed)
+    (testing "testing collection search with empty json body"
+      (let [response (client/get
+                      (url/search-url :collection)
+                      {:accept "application/json"
+                       :content-type "application/json"
+                       :body nil
+                       :throw-exceptions false
+                       :connection-manager (s/conn-mgr)})]
+         (is (= 422 (:status response)))))))

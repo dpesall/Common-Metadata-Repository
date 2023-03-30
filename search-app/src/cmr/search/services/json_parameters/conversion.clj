@@ -5,6 +5,7 @@
    [clojure.java.io :as io]
    [clojure.set :as set]
    [clojure.string :as str]
+   [cmr.common.log :refer [debug]]
    [cmr.common-app.services.search.group-query-conditions :as gc]
    [cmr.common-app.services.search.parameters.converters.nested-field :as nf]
    [cmr.common-app.services.search.params :as common-params]
@@ -112,8 +113,10 @@
   "Perform all validations against the provided JSON query."
   [concept-type json-query]
   (concept-type-validation concept-type)
+  (when-not json-query
+    (errors/throw-service-errors :invalid-data [(format "Invalid json data in json query [%s]" json-query)]))
   (when-let [errors (seq (js/validate-json (concept-type->json-query-schema concept-type) json-query))]
-    (errors/throw-service-errors :bad-request errors)))
+    (errors/throw-service-errors :invalid-data errors)))
 
 (def ^:private tag-subfields
   "Defines a map of :tag to its subfields for nested condition."
